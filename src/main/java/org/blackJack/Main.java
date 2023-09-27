@@ -33,6 +33,15 @@ public class Main {
         System.out.println("Cartes après tirage: " + java.util.Arrays.deepToString(cartesApresTirage));
 
 
+        // Call the melanger_jeu_cartes method
+        int[][] jeuMelange = Carte.melanger_jeu_cartes(allCartes);
+        System.out.println("Jeu mélangé: " + java.util.Arrays.deepToString(jeuMelange));
+
+
+
+
+
     }
+
 }
 

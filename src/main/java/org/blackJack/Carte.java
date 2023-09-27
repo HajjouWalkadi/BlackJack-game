@@ -56,7 +56,18 @@ public class Carte {
         return extraire_ieme_carte(cartes, indice);
     }
 
+    public static int[][] melanger_jeu_cartes(int[][] cartes) {
+        int[][] jeuMelange = new int[cartes.length][2];
 
+        for (int i = 0; i < cartes.length; i++) {
+            Object[] result = tirer_une_carte(cartes);
+            int[][] carteTiree = (int[][]) result[0];
+            cartes = (int[][]) result[1];
+            jeuMelange[i] = carteTiree[0];
+        }
+
+        return jeuMelange;
+    }
 
 
 
