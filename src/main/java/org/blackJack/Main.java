@@ -25,8 +25,14 @@ public class Main {
         System.out.println("Carte extraite: [" + carteExtraite[0][0] + " " + carteExtraite[0][1] + "]");
         System.out.println("Cartes restantes: " + java.util.Arrays.deepToString(cartesRestantes));
 
+        // Call the tirer_une_carte method
+        Object[] tirageResult = Carte.tirer_une_carte(allCartes);
+        int[][] carteTiree = (int[][]) tirageResult[0];
+        int[][] cartesApresTirage = (int[][]) tirageResult[1];
+        System.out.println("Carte tirée: [" + carteTiree[0][0] + " " + carteTiree[0][1] + "]");
+        System.out.println("Cartes après tirage: " + java.util.Arrays.deepToString(cartesApresTirage));
+
 
     }
-
 }
 

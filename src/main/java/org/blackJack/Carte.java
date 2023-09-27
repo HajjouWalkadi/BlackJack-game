@@ -51,6 +51,12 @@ public class Carte {
         return new Object[]{carteExtraite, cartesRestantes};
     }
 
+    public static Object[] tirer_une_carte(int[][] cartes) {
+        int indice = (int) (Math.random() * cartes.length);
+        return extraire_ieme_carte(cartes, indice);
+    }
+
+
 
 
 
