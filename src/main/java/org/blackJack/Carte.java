@@ -69,6 +69,47 @@ public class Carte {
         return jeuMelange;
     }
 
+    public static int[][][] piocher_n_cartes(int[][] cartes, int n) {
+        if (n <= 0 || n > cartes.length) {
+            System.out.println("Nombre invalide de cartes à piocher.");
+            return null;
+        }
+
+        int[][] cartesPiochees = new int[n][2];
+        int[][] cartesRestantes = new int[cartes.length - n][2];
+
+        // Copier les n premières cartes dans cartesPiochees
+        for (int i = 0; i < n; i++) {
+            cartesPiochees[i] = cartes[i];
+        }
+
+        // Copier les cartes restantes dans cartesRestantes
+        for (int i = n; i < cartes.length; i++) {
+            cartesRestantes[i - n] = cartes[i];
+        }
+
+        return new int[][][] { cartesPiochees, cartesRestantes };
+    }
+
+
+
+    public static int[][] defausser_cartes(int[][] pioche, int[][] cartesADefaucher) {
+        int taillePioche = pioche.length;
+        int tailleCartesADefaucher = cartesADefaucher.length;
+        int[][] nouvellePioche = new int[taillePioche + tailleCartesADefaucher][2];
+
+        // Copier les cartes de la pioche d'origine dans la nouvelle pioche
+        for (int i = 0; i < taillePioche; i++) {
+            nouvellePioche[i] = pioche[i];
+        }
+
+        // Copier les cartes à défausser à la fin de la nouvelle pioche
+        for (int i = 0; i < tailleCartesADefaucher; i++) {
+            nouvellePioche[taillePioche + i] = cartesADefaucher[i];
+        }
+
+        return nouvellePioche;
+    }
 
 
 }
