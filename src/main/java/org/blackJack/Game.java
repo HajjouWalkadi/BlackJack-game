@@ -83,8 +83,11 @@ public class Game {
                     gameOver = true;
                 }
                 }
-            }
-        }
+            System.out.print("\nDo you want to play again? (yes/no): ");
+            playAgain = scanner.nextLine().toLowerCase();
+        } while (playAgain.equals("yes"));
+
+        System.out.println("\nThanks for playing!");
     }
 
     public static int calculateHandValue(int[][] hand) {
