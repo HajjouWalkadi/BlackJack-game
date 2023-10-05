@@ -41,10 +41,18 @@ public class Game {
                     playerHand = Carte.defausser_cartes(playerHand, Carte.piocher_n_cartes(deck, 2)[0]);
                     playerScore = calculateHandValue(playerHand);
                     printHand(playerHand, playerScore);
-
+                }
         }
     }
 }
+    public static void printHand(int[][] hand, int score) {
+        for (int i = 0; i < hand.length; i++) {
+            int value = hand[i][0];
+            String form = getForm(hand[i][1]);
+            System.out.println(value + " of " + form);
+        }
+        System.out.println("Hand value: " + score);
+    }
 
 
 
