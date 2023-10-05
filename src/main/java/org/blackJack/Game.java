@@ -70,7 +70,18 @@ public class Game {
                         dealerScore = calculateHandValue(dealerHand);
                         printHand(dealerHand, dealerScore);
                     }
+                    if (dealerScore > 21) {
+                        System.out.println("Dealer busts! Player wins!");
+                    } else if (playerScore > dealerScore) {
+                        System.out.println("Player wins!");
+                    } else if (dealerScore > playerScore) {
+                        System.out.println("Dealer wins!");
+                    } else {
+                        System.out.println("It's a push! ");
+                    }
 
+                    gameOver = true;
+                }
                 }
             }
         }
