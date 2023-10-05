@@ -54,5 +54,20 @@ public class Game {
         System.out.println("Hand value: " + score);
     }
 
+    public static String getForm(int form) {
+        switch (form) {
+            case 1:
+                return "Hearts";
+            case 2:
+                return "Diamonds";
+            case 3:
+                return "Clubs";
+            case 4:
+                return "Spades";
+            default:
+                return "Unknown";
+        }
+    }
+
 
 
