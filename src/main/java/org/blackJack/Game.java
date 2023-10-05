@@ -41,9 +41,16 @@ public class Game {
                     playerHand = Carte.defausser_cartes(playerHand, Carte.piocher_n_cartes(deck, 2)[0]);
                     playerScore = calculateHandValue(playerHand);
                     printHand(playerHand, playerScore);
+                    if (playerScore == 21) {
+                        System.out.println("Blackjack! Player wins!");
+                        gameOver = true;
+                    } else if (playerScore > 21) {
+                        System.out.println("Player busts! Dealer wins!");
+                        gameOver = true;
+                    }
                 }
         }
-    }while ()
+    }
 }
 
     public static int calculateHandValue(int[][] hand) {
