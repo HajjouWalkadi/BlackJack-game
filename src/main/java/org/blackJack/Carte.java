@@ -93,10 +93,10 @@ public class Carte {
 
 
 
-    public static int[][] defausser_cartes(int[][] pioche, int[][] cartesADefaucher) {
+    public static int[][] defausser_cartes(int[][] pioche, int[][] cartesADefausser) {
         int taillePioche = pioche.length;
-        int tailleCartesADefaucher = cartesADefaucher.length;
-        int[][] nouvellePioche = new int[taillePioche + tailleCartesADefaucher][2];
+        int tailleCartesADefausser = cartesADefausser.length;
+        int[][] nouvellePioche = new int[taillePioche + tailleCartesADefausser][2];
 
         // Copier les cartes de la pioche d'origine dans la nouvelle pioche
         for (int i = 0; i < taillePioche; i++) {
@@ -104,8 +104,8 @@ public class Carte {
         }
 
         // Copier les cartes à défausser à la fin de la nouvelle pioche
-        for (int i = 0; i < tailleCartesADefaucher; i++) {
-            nouvellePioche[taillePioche + i] = cartesADefaucher[i];
+        for (int i = 0; i < tailleCartesADefausser; i++) {
+            nouvellePioche[taillePioche + i] = cartesADefausser[i];
         }
 
         return nouvellePioche;
