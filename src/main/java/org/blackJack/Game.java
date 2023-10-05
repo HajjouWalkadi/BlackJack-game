@@ -65,6 +65,12 @@ public class Game {
                     dealerScore = calculateHandValue(dealerHand);
                     printHand(dealerHand, dealerScore);
 
+                    while (dealerScore < 17) {
+                        dealerHand = Carte.defausser_cartes(dealerHand, Carte.piocher_n_cartes(deck, 1)[0]);
+                        dealerScore = calculateHandValue(dealerHand);
+                        printHand(dealerHand, dealerScore);
+                    }
+
                 }
             }
         }
