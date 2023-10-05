@@ -57,7 +57,14 @@ public class Game {
                             playerHand = Carte.defausser_cartes(playerHand, newCard);
                         }
                     }
-                }
+                }else {
+                    System.out.println("\nDealer's turn:");
+                    System.out.println("Dealer's hand: ");
+                    dealerHand = Carte.defausser_cartes(dealerHand, dealerHand);
+                    dealerHand = Carte.defausser_cartes(dealerHand, Carte.piocher_n_cartes(deck, 2)[0]);
+                    dealerScore = calculateHandValue(dealerHand);
+                    printHand(dealerHand, dealerScore);
+
                 }
             }
         }
