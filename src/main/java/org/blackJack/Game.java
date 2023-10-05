@@ -43,8 +43,33 @@ public class Game {
                     printHand(playerHand, playerScore);
                 }
         }
-    }
+    }while ()
 }
+
+    public static int calculateHandValue(int[][] hand) {
+        int value = 0;
+        int numAces = 0;
+
+        for (int i = 0; i < hand.length; i++) {
+            int cardValue = hand[i][0];
+            if (cardValue == 1) {
+                numAces++;
+                value += 11;
+            } else if (cardValue >= 10) {
+                value += 10;
+            } else {
+                value += cardValue;
+            }
+        }
+
+        while (value > 21 && numAces > 0) {
+            value -= 10;
+            numAces--;
+        }
+
+        return value;
+    }
+
     public static void printHand(int[][] hand, int score) {
         for (int i = 0; i < hand.length; i++) {
             int value = hand[i][0];
