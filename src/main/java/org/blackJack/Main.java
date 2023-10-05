@@ -1,3 +1,4 @@
+/*
 package org.blackJack;
 
 import java.util.ArrayList;
@@ -39,3 +40,10 @@ public class Main {
 }
 
 
+*/
+package org.blackJack;
+
+public class Main {
+    public static void main(String[] args) {
+    }
+}
