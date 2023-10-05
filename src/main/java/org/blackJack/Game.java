@@ -47,11 +47,21 @@ public class Game {
                     } else if (playerScore > 21) {
                         System.out.println("Player busts! Dealer wins!");
                         gameOver = true;
+                    } else {
+                        System.out.print("Do you want to hit (h) or stand (s): ");
+                        String choice = scanner.nextLine().toLowerCase();
+                        if (choice.equals("s")) {
+                            playerTurn = false;
+                        } else if (choice.equals("h")) {
+                            int[][] newCard = Carte.piocher_n_cartes(deck, 1)[0];
+                            playerHand = Carte.defausser_cartes(playerHand, newCard);
+                        }
                     }
                 }
+                }
+            }
         }
     }
-}
 
     public static int calculateHandValue(int[][] hand) {
         int value = 0;
@@ -100,6 +110,7 @@ public class Game {
                 return "Unknown";
         }
     }
+}
 
 
 
